@@ -17,6 +17,8 @@ This set up gives me the the ability to search for all actions relating to a pro
 
 However, the mobile clients for Evernote don't allow you to copy the note link for notes, only the *public* sharing link, which also makes the note public. I needed a way to be able to create a project note from the road. The first step is getting a script together that will create the project notes. This script looks for all notes in a separate notebook (called "Projects" in my setup). The script will then tag all the notes and set the source URL field to the note link, and then move them into my actions notebook.
 
-My next step is to get the script executing via a scheduler so that it runs periodically.
+The next step is to get the script executing via a scheduler so that it runs periodically. If we wanted to run this every 5 minutes, we could add something like this to our crontab:
+
+*/5     *       *       *       *       osascript /path/to/ProjectCreator.scpt 2>&1
 
 I realize this script is fairly niche, but I'm throwing it over here anyway in case others find parts of it useful.
